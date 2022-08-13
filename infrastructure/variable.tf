@@ -1,0 +1,28 @@
+variable "region" {
+  default = "ap-south-1"
+}
+
+variable "aws_profile" {
+  default = "default"
+}
+
+variable "shared_credentials_file" {
+  description = "Profile file with credentials to the AWS account"
+  type        = string
+  default     = "~/.aws/credentials"
+}
+
+variable "tags" {
+  type    = map(string)
+  default = { application = "lambda-deploy-demo", environment = "dev" }
+}
+
+variable "account_id" {
+  type    = string
+  default = "967217736102"
+}
+
+variable "stage_name" {
+  type    = string
+  default = "dev"
+}
