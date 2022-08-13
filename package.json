@@ -5,8 +5,11 @@
   "author": "Jitu Nayak",
   "license": "MIT",
   "scripts": {
-    "deploy": "yarn run build && cd ../terraform && terraform apply",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "deploy": "yarn run build && cd infrastructure && terraform apply",
+    "tf:init": "cd infrastructure && terraform init",
+    "tf:plan": "cd infrastructure && terraform plan",
+    "tf:apply": "cd infrastructure && terraform apply"
   },
   "devDependencies": {
     "@types/node": "^18.7.3",
