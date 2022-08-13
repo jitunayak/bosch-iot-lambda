@@ -14,7 +14,7 @@ variable "shared_credentials_file" {
 
 variable "tags" {
   type    = map(string)
-  default = { application = "lambda-deploy-demo", environment = "dev" }
+  default = { application = "lambda-deploy-demo", environment = env.stage_name }
 }
 
 variable "account_id" {
@@ -25,4 +25,9 @@ variable "account_id" {
 variable "stage_name" {
   type    = string
   default = "dev"
+}
+
+variable "table_name" {
+  type    = string
+  default = "IOT-DEVICE-DATA"
 }
