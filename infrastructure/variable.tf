@@ -14,7 +14,7 @@ variable "shared_credentials_file" {
 
 variable "tags" {
   type    = map(string)
-  default = { application = "lambda-deploy-demo", environment = env.stage_name }
+  default = { application = "lambda-deploy-demo" }
 }
 
 variable "account_id" {
