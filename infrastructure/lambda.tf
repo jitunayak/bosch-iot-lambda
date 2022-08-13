@@ -35,6 +35,11 @@ resource "aws_lambda_function" "lambda_function" {
   tags = {
     Name = "bosch_iot_lambda"
   }
+  environment {
+    variables = {
+      TABLE_NAME = "${var.table_name}-${var.stage_name}"
+    }
+  }
 }
 
 

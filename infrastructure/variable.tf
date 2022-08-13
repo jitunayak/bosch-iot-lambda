@@ -14,7 +14,7 @@ variable "shared_credentials_file" {
 
 variable "tags" {
   type    = map(string)
-  default = { application = "lambda-deploy-demo" }
+  default = { application = "bosch_iot_lambda" }
 }
 
 variable "account_id" {

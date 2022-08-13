@@ -9,7 +9,8 @@
     "deploy": "yarn run build && cd infrastructure && terraform apply",
     "tf:init": "cd infrastructure && terraform init",
     "tf:plan": "cd infrastructure && terraform plan",
-    "tf:apply": "cd infrastructure && terraform apply"
+    "tf:apply": "cd infrastructure && terraform apply",
+    "tf:destroy": "cd infrastructure && terraform destroy"
   },
   "devDependencies": {
     "@types/node": "^18.7.3",
