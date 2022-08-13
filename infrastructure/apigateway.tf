@@ -5,7 +5,7 @@ resource "aws_api_gateway_rest_api" "api" {
 resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = aws_api_gateway_rest_api.api.id
   depends_on = [
-  "aws_api_gateway_integration.request_method_integration", "aws_api_gateway_integration_response.response_method_integration"]
+  aws_api_gateway_integration.request_method_integration, aws_api_gateway_integration_response.response_method_integration]
 }
 
 
@@ -63,7 +63,7 @@ resource "aws_lambda_permission" "allow_api_gateway" {
   action        = "lambda:InvokeFunction"
   principal     = "apigateway.amazonaws.com"
   source_arn    = "arn:aws:execute-api:${var.region}:${var.account_id}:${aws_api_gateway_rest_api.api.id}/*/POST${aws_api_gateway_resource.proxy.path}"
-  depends_on    = ["aws_api_gateway_rest_api.api", "aws_api_gateway_resource.proxy"]
+  depends_on    = [aws_api_gateway_rest_api.api, aws_api_gateway_resource.proxy]
 }
 
 resource "aws_api_gateway_stage" "stage" {
